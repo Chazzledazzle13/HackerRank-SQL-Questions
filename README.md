@@ -13,11 +13,14 @@ The CITY and COUNTRY tables are described as follows:
 [City and Country Tables Info](https://www.hackerrank.com/challenges/african-cities/problem)
 
 **Answer:** 
-```SELECT CITY.NAME
+
+SELECT CITY.NAME
 FROM CITY
 INNER JOIN COUNTRY 
 ON CITY.COUNTRYCODE = COUNTRY.CODE
-WHERE COUNTRY.CONTINENT = 'AFRICA';```
+WHERE COUNTRY.CONTINENT = 'AFRICA';
+
+
 
 ### 2. The PADS
 **Question:** Generate the following two result sets:
@@ -36,14 +39,16 @@ The OCCUPATIONS table is described as follows:
 Occupation will only contain one of the following values: Doctor, Professor, Singer or Actor.
 
 **Answer:** 
-```SELECT CONCAT(NAME,'(', SUBSTR(OCCUPATION,1,1), ')') AS NAME_AND_JOB
+
+SELECT CONCAT(NAME,'(', SUBSTR(OCCUPATION,1,1), ')') AS NAME_AND_JOB
 FROM OCCUPATIONS
 ORDER BY NAME_AND_JOB;
 
 SELECT CONCAT('There are a total of ', COUNT(OCCUPATION), " ", LOWER(OCCUPATION), 's.') AS COMBO_JOB
 FROM OCCUPATIONS
 GROUP BY OCCUPATION
-ORDER BY COMBO_JOB;```
+ORDER BY COMBO_JOB;
+
 
 ### 3. Weather Observation Station 15
 Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is
@@ -53,6 +58,8 @@ The STATION table is described as follows:
 [Station Info](https://www.hackerrank.com/challenges/weather-observation-station-15/problem)
 
 **Answer:** 
-```SELECT ROUND(LONG_W,4) 
+
+SELECT ROUND(LONG_W,4) 
 FROM STATION 
-WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345);```
+WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345);
+
